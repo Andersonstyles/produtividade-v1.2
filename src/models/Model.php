@@ -26,11 +26,11 @@ class Model {
     }
 
     public function __get($key) {
-        return $this->values[$key];
+        return html_entity_decode($this->values[$key]);
     }
 
     public function __set($key, $value) {
-        $this->values[$key] = $value;
+        $this->values[$key] = html_entity_decode($value);
     }
 
     public function getValues() {
